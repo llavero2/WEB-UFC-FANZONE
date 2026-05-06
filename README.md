@@ -26,4 +26,4 @@ El proyecto está organizado de la siguiente manera:
 - `CSS UFC.css` (Hoja de estilos global)
 
 ## ✒️ Autor
-Desarrollado con pasión por el deporte y el código.
+Desarrollado por mi mismo por pasión y cariño hacia este deporte
