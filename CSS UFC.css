@@ -1,0 +1,207 @@
+/* --- 1. VARIABLES GLOBALES --- */
+:root {
+    --rojo-ufc: #d20a0a;
+    --fondo-oscuro: #0a0a0a;
+    --caja-gris: #1a1a1a;
+}
+
+/* --- 2. AJUSTES BÁSICOS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo-oscuro);
+    color: white;
+    line-height: 1.6;
+}
+
+.texto-rojo { color: var(--rojo-ufc); }
+
+/* Le damos un padding-top de 120px para que el menú fijo no tape el título de cada página */
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 20px 80px 20px; 
+}
+
+.fondo-gris { background-color: #111111; }
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    border-bottom: 3px solid var(--rojo-ufc);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- 3. MENÚ DE NAVEGACIÓN --- */
+.menu-superior {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 2px solid var(--rojo-ufc);
+    position: fixed; /* Pegado arriba en todas las páginas */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.8rem; font-weight: bold; }
+
+.enlaces a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.enlaces a:hover { color: var(--rojo-ufc); }
+
+/* --- 4. PORTADA (Solo para el Inicio) --- */
+.portada {
+    height: 100vh; /* Ocupa toda la pantalla al entrar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.pinimg.com/1200x/2f/fe/45/2ffe4584f76e836b80b1b407dd3d3849.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.portada h1 { font-size: 4rem; margin-bottom: 10px; }
+.portada p { font-size: 1.2rem; color: #ccc; }
+
+/* --- 5. HISTORIA --- */
+.caja-historia {
+    background-color: var(--caja-gris);
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rojo-ufc);
+}
+
+.texto-historia h3 { font-size: 1.8rem; margin-bottom: 20px; }
+.texto-historia p { font-size: 1.1rem; color: #ddd; margin-bottom: 15px; text-align: justify; }
+
+/* --- 6. TARJETAS (Peleadores y Tienda) --- */
+.cuadricula-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background-color: var(--caja-gris);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    border-color: var(--rojo-ufc);
+}
+
+.tarjeta img { width: 100%; height: 300px; object-fit: cover; }
+.info-tarjeta { padding: 20px; text-align: center; }
+
+.precio { font-size: 1.5rem; font-weight: bold; color: #fff; margin: 10px 0 20px 0; }
+
+/* --- 7. BOTONES --- */
+.btn-rojo {
+    display: inline-block;
+    background-color: var(--rojo-ufc);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-rojo:hover { background-color: #a00000; }
+
+/* --- 8. EVENTOS --- */
+.lista-eventos { display: flex; flex-direction: column; gap: 20px; }
+.evento {
+    background-color: var(--caja-gris);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--rojo-ufc);
+    transition: 0.3s;
+}
+.evento:hover { background-color: #222; }
+.fecha-evento {
+    display: flex; flex-direction: column; text-align: center;
+    padding-right: 25px; margin-right: 25px; border-right: 1px solid #444;
+}
+.fecha-evento .mes { color: var(--rojo-ufc); font-weight: bold; }
+.fecha-evento .dia { font-size: 2rem; font-weight: bold; }
+
+/* --- 9. FORMULARIO DE CONTACTO (NUEVO) --- */
+.formulario-contacto {
+    background-color: var(--caja-gris);
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; /* Lo centra en la pantalla */
+    border: 1px solid #333;
+}
+
+.grupo-form {
+    margin-bottom: 20px;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.grupo-form input, .grupo-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.grupo-form input:focus, .grupo-form textarea:focus {
+    outline: none;
+    border-color: var(--rojo-ufc); /* Se pone rojo al escribir */
+}
+
+/* --- 10. PIE DE PÁGINA --- */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #333;
+}
+
+/* --- 11. MÓVILES --- */
+@media (max-width: 768px) {
+    .menu-superior { flex-direction: column; gap: 15px; position: static; }
+    .contenedor { padding-top: 40px; }
+    .evento { flex-direction: column; text-align: center; }
+    .fecha-evento {
+        border-right: none; border-bottom: 1px solid #444;
+        margin-right: 0; margin-bottom: 15px; padding-right: 0; padding-bottom: 15px;
+    }
+}
